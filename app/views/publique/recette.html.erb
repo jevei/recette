@@ -1,0 +1,18 @@
+<%#= Jérémy Veillette 2020-11-19 %>
+<h1>
+    Ingredients
+</h1>
+<br />
+<p>
+<h2>
+    <%= @recette.titre%>
+</h2>
+<br />
+<span style="white-space: pre-line">
+    <% @recette.recette_ingredients.each do |ingredient| %>
+    <%= ingredient.quantite.to_s + " " + ingredient.unite + " " + ingredient.ingredient.nom%>
+    <% end %>
+    <br />
+    <%= @recette.etapes%>
+</span>
+</p>

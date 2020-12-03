@@ -1,0 +1,12 @@
+<%#= Jérémy Veillette 2020-11-19 %>
+<h1>
+    Liste des recettes de <%= current_user.name %>
+</h1>
+<br />
+<% @recettes.each do |recette| %>
+<p>
+    <i>
+        <%= link_to recette.titre, "/recette/"+recette.id.to_s%>
+    </i>
+</p>
+<% end %>

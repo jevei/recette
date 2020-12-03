@@ -1,0 +1,27 @@
+<%#= Jérémy Veillette 2020-11-19 %>
+<h1>
+    acceuil
+</h1>
+<br />
+<% @recettes.each do |recette| %>
+<p>
+    <i>
+        <%= recette.titre %>
+    </i>
+</p>
+<% end %>
+<br />
+<p>
+    <%= link_to "Mes recettes", "/mesrecettes" %>
+</p>
+<br />
+<%if current_user!=nil%>
+<button id="sign_out_button">
+    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+</button>
+<%end%>
+<%if current_user==nil%>
+<button id="sign_out_button">
+    <%= link_to 'Sign in', "/users/sign_in" %>
+</button>
+<%end%>
